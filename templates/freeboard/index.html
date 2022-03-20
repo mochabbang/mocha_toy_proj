@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <table>
+    <tr>
+        <th>TransactionID</th>
+        <th>ProductID</th>
+        <th>ReferenceOrderID</th>
+        <th>ReferenceOrderLineID</th>
+        <th>TransactionDate</th>
+        <th>TransactionType</th>
+        <th>Quantity</th>
+        <th>ActualCost</th>
+        <th>ModifiedDate</th>
+    </tr>
+    {% if transactions %}
+        {% for trans in transactions %}
+            <tr>
+                <td>{{ trans.TransactionID }}</td>
+                <td>{{ trans.ProductID }}</td>
+                <td>{{ trans.ReferenceOrderID }}</td>
+                <td>{{ trans.ReferenceOrderLineID }}</td>
+                <td>{{ trans.TransactionDate }}</td>
+                <td>{{ trans.TransactionType }}</td>
+                <td>{{ trans.Quantity }}</td>
+                <td>{{ trans.ActualCost }}</td>
+                <td>{{ trans.ModifiedDate }}</td>
+            </tr>
+        {% endfor %}
+     {% else %}
+      <tr><td colspan="9">NOB</td> </tr>
+     {% endif %}
+  </table>
+</body>
+</html>
