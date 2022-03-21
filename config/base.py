@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from django.core.exceptions import ImproperlyConfigured
+import json
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -91,9 +93,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         "PORT": "1433",
 #     },
 # }
-
-from django.core.exceptions import ImproperlyConfigured
-import json
 
 #json 기반 비밀 모듈
 with open(os.path.join(BASE_DIR, 'secrets.json')) as f:

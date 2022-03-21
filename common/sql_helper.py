@@ -13,7 +13,7 @@ class SqlHelper:
         #         print(e)
         #     finally:
         #         cursor.close()
-
+        data = None
         with connection.cursor() as cursor:
             try:
                 cursor.execute(procedure_name, parameters)
