@@ -26,9 +26,9 @@ def login(request):
             userinfo = [model_mapper.make_instance(UserInfo(), item) for item in userdata]
 
             if userinfo is not None:
-                response = HttpResponse()
+                response = redirect('freeboard/')
                 response.set_cookie('userinfo', userinfo)
-                return redirect('freeboard/')
+                return response
     else:
         login_form = LoginForm()
 
